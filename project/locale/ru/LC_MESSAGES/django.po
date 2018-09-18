@@ -22,11 +22,11 @@ msgstr ""
 
 #: basic/context.py:13
 msgid "Home page"
-msgstr ""
+msgstr "Главная"
 
 #: basic/context.py:20
 msgid "Events"
-msgstr ""
+msgstr "Событие"
 
 #: basic/context.py:27 basic/context.py:33 basic/context.py:45
 msgid "Product list"
@@ -115,7 +115,7 @@ msgstr "Вернуться в библиотеку"
 
 #: templates/pages/review_list.html:13
 msgid "Reviews"
-msgstr ""
+msgstr "Отзывы"
 
 #: templates/parts/footer.html:10
 msgid "Copyright"
