@@ -6,7 +6,6 @@ __pycache__/
 .Python
 build/
 develop-eggs/
-dist/
 downloads/
 eggs/
 .eggs/
@@ -60,3 +59,4 @@ venv.bak/
 /site
 .mypy_cache/
 .idea/
+assets/
