@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% load static i18n %}
+
+{% block content %}
+    {{ header }}
+    {{ banner }}
+    <section class="inner-section">
+        <!-- Container Start -->
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="section-title">
+                        <h2>{% trans 'Library' %}</h2>
+                    </div>
+                </div>
+                {% for object in object_list %}
+                    <div class="col-md-4">
+                        <article>
+                            <!-- Post Image -->
+                            {% if object.image %}
+                            <div class="image">
+                                <a href="{{ object.get_absolute_url }}" class="">
+                                    <img class="standard_image" src="{{ object.image.url }}" alt="article-01">
+                                </a>
+                            </div>
+                            {% endif %}
+                            <!-- Post Title -->
+                            <h3><a href="{{ object.get_absolute_url }}" class="">{{ object.title }}</a></h3>
+                            <p class="books-count">
+                                {% trans 'Books' %}: {{ object.books.count }} {% trans 'pcs' %}
+                            </p>
+                        <div class="clearfix"></div>
+                        </article>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                {% include 'parts/pagination.html' %}
+            </div>
+        </div>
+    </section>
+    {{ footer }}
+{% endblock %}

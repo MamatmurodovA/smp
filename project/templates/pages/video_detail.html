@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% load static i18n %}
+
+{% block content %}
+    {{ header }}
+    {{ banner }}
+    <section class="inner-section">
+        <!-- Container Start -->
+        <div class="container">
+            <div class="row">
+                {% for object in object.videos.all %}
+                    <div class="col-md-6">
+                        <article>
+                            <!-- Post Image -->
+                            <div class="image">
+                                <iframe width="100%" height="480" src="https://www.youtube.com/embed/{{ object.get_video_id }}" frameborder="0" allow="encrypted-media" allowfullscreen></iframe>
+                            </div>
+                        </article>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                {% include 'parts/pagination.html' %}
+            </div>
+        </div>
+    </section>
+
+    {{ footer }}
+{% endblock %}

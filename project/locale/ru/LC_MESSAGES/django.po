@@ -1,0 +1,100 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-09-17 23:16+0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n"
+"%100>=11 && n%100<=14)? 2 : 3);\n"
+
+#: basic/models.py:141
+msgid "Name"
+msgstr "Имя"
+
+#: basic/models.py:142 templates/pages/contact.html:81
+msgid "Email"
+msgstr ""
+
+#: basic/models.py:143
+msgid "Topic"
+msgstr "Тема"
+
+#: basic/models.py:144
+msgid "Message"
+msgstr "Сообщение"
+
+#: basic/views.py:86
+msgid ""
+"Thanks, Your message successfully sent. Our staff will contact to you at "
+"soon."
+msgstr "Спасибо, Ваше сообщение успешно отправлено. Наши сотрудники скоро свяжутся с вами."
+
+#: templates/pages/contact.html:14
+msgid "Contact"
+msgstr "Контакт"
+
+#: templates/pages/contact.html:67
+msgid "Submit"
+msgstr "Отправить"
+
+#: templates/pages/contact.html:73
+msgid "Tel"
+msgstr "Тел"
+
+#: templates/pages/contact.html:86
+msgid "Address"
+msgstr "Адрес"
+
+#: templates/pages/events.html:28 templates/pages/interesting.html:30
+#: templates/pages/videos.html:28
+msgid "Read More"
+msgstr "Больше"
+
+#: templates/pages/library.html:13
+msgid "Library"
+msgstr "Библиотека"
+
+#: templates/pages/library.html:30
+msgid "Books"
+msgstr "Книги"
+
+#: templates/pages/library.html:30
+msgid "pcs"
+msgstr "штук"
+
+#: templates/pages/library_books.html:20
+msgid "Title"
+msgstr "Название"
+
+#: templates/pages/library_books.html:21
+msgid "Size"
+msgstr "Размер"
+
+#: templates/pages/library_books.html:22
+msgid "Download"
+msgstr "Скачать"
+
+#: templates/pages/library_books.html:53
+msgid "Back to library"
+msgstr "Вернуться в библиотеку"
+
+#: templates/parts/footer.html:10
+msgid "Copyright"
+msgstr "Авторские права"
+
+#: templates/parts/footer.html:10
+msgid "All Rights Reserved"
+msgstr "Все права защищены"

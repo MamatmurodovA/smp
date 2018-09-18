@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+{% load static i18n %}
+
+
+{% block content %}
+    {{ header }}
+    {{ banner }}
+    <section class="inner-section">
+        <!-- Container Start -->
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="section-title">
+                        <h2>{{ object.title }}</h2>
+                    </div>
+                </div>
+                <table class="table table-borderless">
+                    <thead>
+                    <th></th>
+                    <th>{% trans 'Title' %}</th>
+                    <th>{% trans 'Size' %}</th>
+                    <th class="text-center">{% trans 'Download' %}</th>
+                    </thead>
+                    <tbody>
+                        {% for object in object.books.all %}
+                            <tr>
+                                <td>{{ forloop.counter }}.</td>
+                                <td>
+                                    <a href="{{ object.file.url }}">
+                                        {{ object.title }}
+                                    </a>
+                                </td>
+                                <td>{{ object.file.size|filesizeformat }}</td>
+                                <td class="text-center">
+                                    <a href="{{ object.file.url }}" class="fa fa-download book-download ">
+                                    </a>
+                                </td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                {% include 'parts/pagination.html' %}
+            </div>
+        </div>
+        <div class="container">
+            <div class="row pull-right">
+                <a download="" href="{% url 'basic:library' lang=current_lang %}" class="btn btn-transparent ">
+                    <span class="fa fa-arrow-left"></span>
+                    {% trans 'Back to library' %}
+                </a>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+    </section>
+    {{ footer }}
+{% endblock %}

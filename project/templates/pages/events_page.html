@@ -1,0 +1,75 @@
+{% extends 'base.html' %}
+{% load static i18n %}
+
+{% block content %}
+    {{ header }}
+    {{ banner }}
+    <section class="inner-section inner-page">
+        <!-- Container Start -->
+        <div class="container">
+            <div class="row">
+                <div class="col-md-10 offset-md-1 col-lg-8 offset-lg-0">
+                    <article class="single-post">
+                        <h3>{{ object.title }}</h3>
+                        <ul class="list-inline">
+                            <li class="list-inline-item">{{ object.created_at|date:'F d, Y' }}</li>
+                        </ul>
+                        <img src="{% static 'images/blog/post-4.jpg' %}" alt="article-01">
+                        <p>
+                            {{ object.body|safe }}
+                        </p>
+                        <ul class="social-circle-icons list-inline">
+                            <li class="list-inline-item text-center"><a class="fa fa-facebook" href=""></a></li>
+                            <li class="list-inline-item text-center"><a class="fa fa-twitter" href=""></a></li>
+                            <li class="list-inline-item text-center"><a class="fa fa-google-plus" href=""></a></li>
+                            <li class="list-inline-item text-center"><a class="fa fa-pinterest-p" href=""></a></li>
+                            <li class="list-inline-item text-center"><a class="fa fa-linkedin" href=""></a></li>
+                        </ul>
+                    </article>
+                    <div class="block comment">
+                        <h4>Leave A Comment</h4>
+                        <form action="#">
+                            <!-- Message -->
+                            <div class="form-group mb-30">
+                                <label for="message">Message</label>
+                                <textarea class="form-control" id="message" rows="8"></textarea>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-12 col-md-6">
+                                    <!-- Name -->
+                                    <div class="form-group mb-30">
+                                        <label for="name">Name</label>
+                                        <input type="text" class="form-control" id="name">
+                                    </div>
+                                </div>
+                                <div class="col-sm-12 col-md-6">
+                                    <!-- Email -->
+                                    <div class="form-group mb-30">
+                                        <label for="email">Email</label>
+                                        <input type="email" class="form-control" id="email">
+                                    </div>
+                                </div>
+                            </div>
+                            <button class="btn btn-transparent">Leave Comment</button>
+                        </form>
+                    </div>
+                </div>
+                <div class="col-md-10 offset-md-1 col-lg-4 offset-lg-0">
+                    <div class="sidebar">
+                        <div class="widget category">
+						<!-- Widget Header -->
+                            <h5 class="widget-header">Другие</h5>
+                            <ul class="category-list">
+                                {% for item in items %}
+                                    <li><a href="{{ item.get_absolute_url }}">{{ item.title }}</a></li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    {{ footer }}
+{% endblock %}

@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% load static i18n %}
+
+{% block content %}
+    {{ header }}
+    {{ banner }}
+    <section class="inner-section">
+        <!-- Container Start -->
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="section-title">
+                        <h2>{% trans 'Reviews' %}</h2>
+                    </div>
+                </div>
+                {% for object in object_list %}
+                    <div class="col-md-12">
+                        <article>
+                            <h4>{{ object.author }}</h4>
+                            {% if object.file %}
+                                <div>
+
+                                    <audio style="width: 100%;" controls src="{{ object.file.url }}"></audio>
+                                </div>
+                            {% endif %}
+                            {{ object.comment|safe }}
+                        </article>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+        <div class="container ">
+            <div class="row ">
+                {% include 'parts/pagination.html' %}
+            </div>
+        </div>
+    </section>
+    {{ footer }}
+{% endblock %}

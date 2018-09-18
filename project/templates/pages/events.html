@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% load static i18n %}
+
+{% block content %}
+    {{ header }}
+    {{ banner }}
+    <section class="inner-section">
+        <!-- Container Start -->
+        <div class="container">
+            <div class="row">
+                {% for object in object_list %}
+                    <div class="col-md-6">
+                        <article>
+                            <!-- Post Image -->
+                            <div class="image">
+                                <img src="{% static 'images/blog/post-1.jpg' %}" alt="article-01">
+                            </div>
+                            <!-- Post Title -->
+                            <h3><a href="{{ object.get_absolute_url }}" class="">{{ object.title }}</a></h3>
+                            <ul class="list-inline">
+                                <li class="list-inline-item">{{ object.created_at|date:'F d, Y' }}</li>
+                            </ul>
+                            <!-- Post Description -->
+                            <p class="">
+                                {{ object.body|truncatewords_html:40|safe }}
+                            </p>
+                            <!-- Read more button -->
+                            <a href="{{ object.get_absolute_url }}" class="btn btn-transparent">{% trans 'Read More' %}</a>
+                        </article>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                {% include 'parts/pagination.html' %}
+            </div>
+        </div>
+    </section>
+
+    {{ footer }}
+{% endblock %}
