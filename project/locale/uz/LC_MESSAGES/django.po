@@ -8,32 +8,52 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-09-17 23:16+0500\n"
+"POT-Creation-Date: 2018-09-18 12:16+0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: \n"
 
-#: basic/models.py:141
+#: basic/context.py:13
+msgid "Home page"
+msgstr ""
+
+#: basic/context.py:20
+msgid "Events"
+msgstr ""
+
+#: basic/context.py:27 basic/context.py:33 basic/context.py:45
+msgid "Product list"
+msgstr ""
+
+#: basic/context.py:38
+msgid "Product create"
+msgstr ""
+
+#: basic/context.py:50
+msgid "Product detail info"
+msgstr ""
+
+#: basic/models.py:153
 msgid "Name"
 msgstr ""
 
-#: basic/models.py:142 templates/pages/contact.html:81
+#: basic/models.py:154 templates/pages/contact.html:81
 msgid "Email"
 msgstr ""
 
-#: basic/models.py:143
+#: basic/models.py:155
 msgid "Topic"
 msgstr ""
 
-#: basic/models.py:144
+#: basic/models.py:156
 msgid "Message"
 msgstr ""
 
-#: basic/views.py:86
+#: basic/views.py:90
 msgid ""
 "Thanks, Your message successfully sent. Our staff will contact to you at "
 "soon."
@@ -86,6 +106,10 @@ msgstr ""
 
 #: templates/pages/library_books.html:53
 msgid "Back to library"
+msgstr ""
+
+#: templates/pages/review_list.html:13
+msgid "Reviews"
 msgstr ""
 
 #: templates/parts/footer.html:10
