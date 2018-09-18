@@ -8,33 +8,53 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-09-18 12:16+0500\n"
+"POT-Creation-Date: 2018-09-18 14:18+0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: \n"
 
-#: basic/context.py:13
+#: basic/context.py:14
 msgid "Home page"
 msgstr ""
 
-#: basic/context.py:20
+#: basic/context.py:21 basic/context.py:28 basic/context.py:49
 msgid "Events"
 msgstr ""
 
-#: basic/context.py:27 basic/context.py:33 basic/context.py:45
-msgid "Product list"
+#: basic/context.py:41
+msgid "Interesting"
 msgstr ""
 
-#: basic/context.py:38
-msgid "Product create"
+#: basic/context.py:63 basic/context.py:71
+msgid "Mushtariy Yuldasheva's video"
 msgstr ""
 
-#: basic/context.py:50
-msgid "Product detail info"
+#: basic/context.py:86 basic/context.py:94
+msgid "Audio materials"
+msgstr ""
+
+#: basic/context.py:102
+msgid "Video materials"
+msgstr ""
+
+#: basic/context.py:110
+msgid "Video cognitive"
+msgstr ""
+
+#: basic/context.py:118 basic/context.py:126
+msgid "Library"
+msgstr ""
+
+#: basic/context.py:141
+msgid "Contact"
+msgstr ""
+
+#: basic/context.py:147
+msgid "Reviews"
 msgstr ""
 
 #: basic/models.py:153
@@ -53,14 +73,10 @@ msgstr ""
 msgid "Message"
 msgstr ""
 
-#: basic/views.py:90
+#: basic/views.py:95
 msgid ""
 "Thanks, Your message successfully sent. Our staff will contact to you at "
 "soon."
-msgstr ""
-
-#: templates/pages/contact.html:14
-msgid "Contact"
 msgstr ""
 
 #: templates/pages/contact.html:67
@@ -75,13 +91,9 @@ msgstr ""
 msgid "Address"
 msgstr ""
 
-#: templates/pages/events.html:28 templates/pages/interesting.html:30
-#: templates/pages/videos.html:28
+#: templates/pages/events.html:33 templates/pages/interesting.html:35
+#: templates/pages/videos.html:33
 msgid "Read More"
-msgstr ""
-
-#: templates/pages/library.html:13
-msgid "Library"
 msgstr ""
 
 #: templates/pages/library.html:30
@@ -106,10 +118,6 @@ msgstr ""
 
 #: templates/pages/library_books.html:53
 msgid "Back to library"
-msgstr ""
-
-#: templates/pages/review_list.html:13
-msgid "Reviews"
 msgstr ""
 
 #: templates/parts/footer.html:10

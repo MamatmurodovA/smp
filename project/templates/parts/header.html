@@ -6,7 +6,7 @@
 			<div class="col-md-12">
 				<nav class="navbar navbar-expand-lg  navigation">
 					<a class="navbar-brand" href="{% url 'basic:home' lang=LANG_CODE %}">
-						<img class="header-logo" src="{% static 'images/logo.webp' %}" alt="">
+						<img class="header-logo" src="{{ site_logo }}" alt="">
 					</a>
 					<button class="navbar-toggler open_menu" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="menu_item_liner"></span>

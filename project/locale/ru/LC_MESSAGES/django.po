@@ -8,37 +8,57 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-09-18 12:16+0500\n"
+"POT-Creation-Date: 2018-09-18 14:18+0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: \n"
-"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%"
-"10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n%"
-"100>=11 && n%100<=14)? 2 : 3);\n"
+"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n"
+"%100>=11 && n%100<=14)? 2 : 3);\n"
 
-#: basic/context.py:13
+#: basic/context.py:14
 msgid "Home page"
 msgstr "Главная"
 
-#: basic/context.py:20
+#: basic/context.py:21 basic/context.py:28 basic/context.py:49
 msgid "Events"
 msgstr "Событие"
 
-#: basic/context.py:27 basic/context.py:33 basic/context.py:45
-msgid "Product list"
-msgstr ""
+#: basic/context.py:41
+msgid "Interesting"
+msgstr "Интересное"
 
-#: basic/context.py:38
-msgid "Product create"
-msgstr ""
+#: basic/context.py:63 basic/context.py:71
+msgid "Mushtariy Yuldasheva's video"
+msgstr "Видео Муштарий Юлдашевой"
 
-#: basic/context.py:50
-msgid "Product detail info"
-msgstr ""
+#: basic/context.py:86 basic/context.py:94
+msgid "Audio materials"
+msgstr "Аудио материалы"
+
+#: basic/context.py:102
+msgid "Video materials"
+msgstr "Видео материалы"
+
+#: basic/context.py:110
+msgid "Video cognitive"
+msgstr "Познавательное и интересное видео"
+
+#: basic/context.py:118 basic/context.py:126
+msgid "Library"
+msgstr "Библиотека"
+
+#: basic/context.py:141
+msgid "Contact"
+msgstr "Контакт"
+
+#: basic/context.py:147
+msgid "Reviews"
+msgstr "Отзывы"
 
 #: basic/models.py:153
 msgid "Name"
@@ -56,17 +76,13 @@ msgstr "Тема"
 msgid "Message"
 msgstr "Сообщение"
 
-#: basic/views.py:90
+#: basic/views.py:95
 msgid ""
 "Thanks, Your message successfully sent. Our staff will contact to you at "
 "soon."
 msgstr ""
 "Спасибо, Ваше сообщение успешно отправлено. Наши сотрудники скоро свяжутся с "
 "вами."
-
-#: templates/pages/contact.html:14
-msgid "Contact"
-msgstr "Контакт"
 
 #: templates/pages/contact.html:67
 msgid "Submit"
@@ -80,14 +96,10 @@ msgstr "Тел"
 msgid "Address"
 msgstr "Адрес"
 
-#: templates/pages/events.html:28 templates/pages/interesting.html:30
-#: templates/pages/videos.html:28
+#: templates/pages/events.html:33 templates/pages/interesting.html:35
+#: templates/pages/videos.html:33
 msgid "Read More"
 msgstr "Больше"
-
-#: templates/pages/library.html:13
-msgid "Library"
-msgstr "Библиотека"
 
 #: templates/pages/library.html:30
 msgid "Books"
@@ -112,10 +124,6 @@ msgstr "Скачать"
 #: templates/pages/library_books.html:53
 msgid "Back to library"
 msgstr "Вернуться в библиотеку"
-
-#: templates/pages/review_list.html:13
-msgid "Reviews"
-msgstr "Отзывы"
 
 #: templates/parts/footer.html:10
 msgid "Copyright"

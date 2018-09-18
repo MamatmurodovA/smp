@@ -170,3 +170,11 @@ class Review(models.Model):
 
     def __str__(self):
         return self.author
+
+
+class SiteInformation(models.Model):
+    site_name = models.CharField(max_length=254, default='Саморазвитие и Самопознание')
+    site_logo = models.ImageField(upload_to='site/', default='logo.webp')
+
+    def __str__(self):
+        return self.site_name

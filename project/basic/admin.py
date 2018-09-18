@@ -11,7 +11,8 @@ from .models import (
     Book,
     Library,
     Contact,
-    Review
+    Review,
+    SiteInformation
 )
 
 
@@ -68,3 +69,4 @@ admin.site.register(YouTubeVideoAlbum, YouTubeVideoAlbumAdmin)
 admin.site.register(Library, LibraryAdmin)
 admin.site.register(Contact, ContactAdmin)
 admin.site.register(Review)
+admin.site.register(SiteInformation)

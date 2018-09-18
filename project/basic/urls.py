@@ -15,7 +15,8 @@ from .views import (
     ReviewListView,
     YouTubeAudioAlbumsView,
     YouTubeVideoInterestingAlbumsView,
-    YouTubeVideoCognitiveAlbumsView
+    YouTubeVideoCognitiveAlbumsView,
+    YouTubeAudioAlbumDetailView
 )
 
 app_name = 'basic'

@@ -612,6 +612,40 @@ ALTER SEQUENCE public.basic_review_id_seq OWNED BY public.basic_review.id;
 
 
 --
+-- Name: basic_siteinformation; Type: TABLE; Schema: public; Owner: smp
+--
+
+CREATE TABLE public.basic_siteinformation (
+    id integer NOT NULL,
+    site_name character varying(254) NOT NULL,
+    site_logo character varying(100) NOT NULL
+);
+
+
+ALTER TABLE public.basic_siteinformation OWNER TO smp;
+
+--
+-- Name: basic_siteinformation_id_seq; Type: SEQUENCE; Schema: public; Owner: smp
+--
+
+CREATE SEQUENCE public.basic_siteinformation_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.basic_siteinformation_id_seq OWNER TO smp;
+
+--
+-- Name: basic_siteinformation_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: smp
+--
+
+ALTER SEQUENCE public.basic_siteinformation_id_seq OWNED BY public.basic_siteinformation.id;
+
+
+--
 -- Name: basic_youtubevideo; Type: TABLE; Schema: public; Owner: smp
 --
 
@@ -903,6 +937,13 @@ ALTER TABLE ONLY public.basic_review ALTER COLUMN id SET DEFAULT nextval('public
 
 
 --
+-- Name: basic_siteinformation id; Type: DEFAULT; Schema: public; Owner: smp
+--
+
+ALTER TABLE ONLY public.basic_siteinformation ALTER COLUMN id SET DEFAULT nextval('public.basic_siteinformation_id_seq'::regclass);
+
+
+--
 -- Name: basic_youtubevideo id; Type: DEFAULT; Schema: public; Owner: smp
 --
 
@@ -1050,6 +1091,10 @@ COPY public.auth_permission (id, name, content_type_id, codename) FROM stdin;
 62	Can change review	19	change_review
 63	Can delete review	19	delete_review
 64	Can view review	19	view_review
+65	Can add site information	20	add_siteinformation
+66	Can change site information	20	change_siteinformation
+67	Can delete site information	20	delete_siteinformation
+68	Can view site information	20	view_siteinformation
 \.
 
 
@@ -1057,7 +1102,7 @@ COPY public.auth_permission (id, name, content_type_id, codename) FROM stdin;
 -- Name: auth_permission_id_seq; Type: SEQUENCE SET; Schema: public; Owner: smp
 --
 
-SELECT pg_catalog.setval('public.auth_permission_id_seq', 64, true);
+SELECT pg_catalog.setval('public.auth_permission_id_seq', 68, true);
 
 
 --
@@ -1488,6 +1533,22 @@ COPY public.basic_review (id, author, comment, file, created_at, photo, is_top) 
 --
 
 SELECT pg_catalog.setval('public.basic_review_id_seq', 44, true);
+
+
+--
+-- Data for Name: basic_siteinformation; Type: TABLE DATA; Schema: public; Owner: smp
+--
+
+COPY public.basic_siteinformation (id, site_name, site_logo) FROM stdin;
+2	Саморазвитие и Самопознание	site/logo_oYoSf5f.webp
+\.
+
+
+--
+-- Name: basic_siteinformation_id_seq; Type: SEQUENCE SET; Schema: public; Owner: smp
+--
+
+SELECT pg_catalog.setval('public.basic_siteinformation_id_seq', 2, true);
 
 
 --
@@ -1998,6 +2059,10 @@ COPY public.django_admin_log (id, action_time, object_id, object_repr, action_fl
 282	2018-09-18 08:50:02.425025+05	58	Рекомендуемые фильмы	2	[{"changed": {"fields": ["body"]}}]	8	1
 283	2018-09-18 08:53:49.820494+05	58	Рекомендуемые фильмы	2	[{"changed": {"fields": ["body"]}}]	8	1
 284	2018-09-18 08:58:14.414601+05	59	Также рекомендуем	1	[{"added": {}}]	8	1
+285	2018-09-18 14:09:31.81426+05	1	SiteInformation object (1)	1	[{"added": {}}]	20	1
+286	2018-09-18 14:14:28.732045+05	1	Саморазвитие и Самопознание 2	2	[{"changed": {"fields": ["site_name"]}}]	20	1
+287	2018-09-18 14:14:39.575684+05	1	Саморазвитие и Самопознание 2	3		20	1
+288	2018-09-18 14:15:39.147243+05	2	Саморазвитие и Самопознание	1	[{"added": {}}]	20	1
 \.
 
 
@@ -2005,7 +2070,7 @@ COPY public.django_admin_log (id, action_time, object_id, object_repr, action_fl
 -- Name: django_admin_log_id_seq; Type: SEQUENCE SET; Schema: public; Owner: smp
 --
 
-SELECT pg_catalog.setval('public.django_admin_log_id_seq', 284, true);
+SELECT pg_catalog.setval('public.django_admin_log_id_seq', 288, true);
 
 
 --
@@ -2032,6 +2097,7 @@ COPY public.django_content_type (id, app_label, model) FROM stdin;
 17	basic	book
 18	basic	contact
 19	basic	review
+20	basic	siteinformation
 \.
 
 
@@ -2039,7 +2105,7 @@ COPY public.django_content_type (id, app_label, model) FROM stdin;
 -- Name: django_content_type_id_seq; Type: SEQUENCE SET; Schema: public; Owner: smp
 --
 
-SELECT pg_catalog.setval('public.django_content_type_id_seq', 19, true);
+SELECT pg_catalog.setval('public.django_content_type_id_seq', 20, true);
 
 
 --
@@ -2090,6 +2156,7 @@ COPY public.django_migrations (id, app, name, applied) FROM stdin;
 41	basic	0026_review_is_top	2018-09-18 07:38:09.103897+05
 42	basic	0027_youtubevideoalbum_video_type	2018-09-18 07:52:01.739029+05
 43	basic	0028_auto_20180918_0826	2018-09-18 08:26:52.552825+05
+44	basic	0029_siteinformation	2018-09-18 14:08:26.882673+05
 \.
 
 
@@ -2097,7 +2164,7 @@ COPY public.django_migrations (id, app, name, applied) FROM stdin;
 -- Name: django_migrations_id_seq; Type: SEQUENCE SET; Schema: public; Owner: smp
 --
 
-SELECT pg_catalog.setval('public.django_migrations_id_seq', 43, true);
+SELECT pg_catalog.setval('public.django_migrations_id_seq', 44, true);
 
 
 --
@@ -2309,6 +2376,14 @@ ALTER TABLE ONLY public.basic_menu_translation
 
 ALTER TABLE ONLY public.basic_review
     ADD CONSTRAINT basic_review_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: basic_siteinformation basic_siteinformation_pkey; Type: CONSTRAINT; Schema: public; Owner: smp
+--
+
+ALTER TABLE ONLY public.basic_siteinformation
+    ADD CONSTRAINT basic_siteinformation_pkey PRIMARY KEY (id);
 
 
 --

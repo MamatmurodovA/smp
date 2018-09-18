@@ -57,6 +57,11 @@ class YouTubeVideoAlbumDetailView(TranslatableSingleObjectMixin, generic.DetailV
     model = YouTubeVideoAlbum
 
 
+class YouTubeAudioAlbumDetailView(TranslatableSingleObjectMixin, generic.DetailView):
+    template_name = 'pages/video_detail.html'
+    model = YouTubeVideoAlbum
+
+
 class InterestingView(generic.ListView):
     template_name = 'pages/interesting.html'
 
