@@ -1,0 +1,50 @@
+{% load static i18n %}
+{%  get_current_language as LANG_CODE %}
+<section>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<nav class="navbar navbar-expand-lg  navigation">
+					<a class="navbar-brand" href="{% url 'basic:home' lang=LANG_CODE %}">
+						<img class="header-logo" src="{% static 'images/logo.webp' %}" alt="">
+					</a>
+					<button class="navbar-toggler open_menu" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="menu_item_liner"></span>
+                        <span class="menu_item_liner"></span>
+                        <span class="menu_item_liner"></span>
+					</button>
+					<div class="collapse navbar-collapse" id="navbarSupportedContent">
+						<ul class="navbar-nav ml-auto main-nav ">
+                            {% for menu_item in menu_items %}
+                                {% if menu_item.get_children %}
+                                    <li class="nav-item dropdown dropdown-slide">
+                                        <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            {{ menu_item.title }}
+                                            <span><i class="fa fa-angle-down"></i></span>
+                                        </a>
+                                        <!-- Dropdown list -->
+                                        <div class="dropdown-menu dropdown-menu-right">
+                                            {% for child in menu_item.get_children %}
+                                                <a class="dropdown-item {% if request.path == child.get_absolute_url %}active{% endif %}" href="{{ child.get_absolute_url }}">
+                                                    {{ child.title }}
+                                                </a>
+                                            {% endfor %}
+
+                                        </div>
+                                    </li>
+                                {% else %}
+                                    <li class="nav-item {% if request.path == menu_item.get_absolute_url %}active{% endif %}" >
+                                        <a class="nav-link " href="{{ menu_item.get_absolute_url }}">
+                                            {{ menu_item.title }}
+                                        </a>
+                                    </li>
+                                {% endif %}
+
+                            {% endfor %}
+						</ul>
+					</div>
+				</nav>
+			</div>
+		</div>
+	</div>
+</section>
